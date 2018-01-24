@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hp.mychat.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/idMyAppRar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="64dp"
+            app:title="Messaging"
+            app:expandedTitleTextAppearance="@android:color/transparent">
+
+        <ImageView
+            android:id="@+id/toolbarImage"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:fitsSystemWindows="true"
+            android:src="@drawable/smspic"
+            app:layout_collapseMode="parallax" />
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorToolBarBG"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            android:title="My Titile"
+            app:layout_collapseMode="pin"/>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <!-- Desi tareka for tool bar shadow or
+dwraable mai toolbar_drop shadow file hai-->
+        <View
+            android:id="@+id/toolbar_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/toolbar_dropshadow" />
+        <android.support.design.widget.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tabLayout"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            android:background="@color/colorToolBarBG"
+            app:tabSelectedTextColor="@color/colorAccent"
+            app:tabTextAppearance="@style/AppThemeTabb">
+        </android.support.design.widget.TabLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.view.ViewPager
+        app:layout_anchor="@id/idMyAppRar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewPager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+    </android.support.v4.view.ViewPager>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+    <include layout="@layout/main_bottom_toolbar"
+        />
+
+
+</LinearLayout>
+
+
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+</android.support.design.widget.CoordinatorLayout>
